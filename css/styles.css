@@ -58,6 +58,7 @@ body {
 label {
     width: 2.5em;
     border-radius: 100%;
+    border: hidden;
 }
 
 /* hide input */
@@ -87,7 +88,7 @@ input.radio-inline:empty ~ label:before {
     content: '';
     width: 2.5em;
     border-radius:100%;
-    border: 1px solid black;
+    border: hidden;
 }
 
 /* toggle hover */
@@ -95,6 +96,8 @@ input.radio-inline:hover:not(:checked) ~ label:before {
     content:'\2714';
     text-indent: .1em;
     color: #C2C2C2;
+    box-shadow: 0 0 0 3px #C2C2C2;
+
 }
 
 input.radio-inline:hover:not(:checked) ~ label {
@@ -104,17 +107,26 @@ input.radio-inline:hover:not(:checked) ~ label {
 /* toggle on */
 input.radio-inline:checked ~ label:before {
     content:'\2714';
-    text-indent: .1em;
-    border: solid 1px #ffffff;
+    text-indent: 0.1em;
+    border: hidden;
+    /*box-shadow: 0 0 0 3px #FFF;*/
 }
 
 input.radio-inline:checked ~ label {
     color: #FFF;
 }
 
-/* radio focus */
-input.radio-inline:focus ~ label:before {
-    box-shadow: 0 0 0 3px #999;
+input.white.radio-inline:checked ~ label:before {
+    content:'\2714';
+    text-indent: 0.1em;
+    border: hidden;
+    /*box-shadow: 0 0 0 3px #555;*/
+}
+
+input.white.radio-inline:checked ~ label {
+    color: #555;
+    border:hidden;
+    /*box-shadow: 0 0 0 3px #555;*/
 }
 
 /*

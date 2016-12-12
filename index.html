@@ -258,7 +258,9 @@
         <input type="radio"
                name="colorSelector"
                id="white"
-               class="radio-inline"/>
+               value="{{colors.white}}"
+               class="radio-inline white"
+               ng-model="selectedColor"/>
         <label for="white"
                ng-style="{'background':'{{colors.white}}'}">
           &nbsp
@@ -269,8 +271,9 @@
         <input type="radio"
                name="colorSelector"
                id="grey"
-               class="radio-inline"
-        />
+               value="{{colors.grey}}"
+               class="radio-inline text-center"
+               ng-model="selectedColor"/>
         <label for="grey"
                ng-style="{'background':'{{colors.grey}}'}">
           &nbsp
@@ -281,7 +284,9 @@
       <input type="radio"
              name="colorSelector"
              id="black"
-             class="radio-inline"/>
+             value="{{colors.black}}"
+             class="radio-inline"
+             ng-model="selectedColor"/>
       <label for="black"
              ng-style="{'background':'{{colors.black}}'}">
         &nbsp
