@@ -269,8 +269,11 @@
     </div> <!-- Row -->
   </div> <!-- Container -->
 
-  <div class="panel panel-loom">
+  <div class="panel panel-default panel-loom">
+
+
     <div class="panel-body">
+      <button class="btn btn-sm btn-default" ng-click="addRow()">Add Row</button>
       <div class="bead-row" ng-repeat="row in loom">
         <div class="bead">
           <button ng-repeat="bead in row"
@@ -280,8 +283,8 @@
           </button>
         </div> <!-- bead -->
       </div> <!-- ng-repeat loom -->
-    </div>
-  </div>
+    </div> <!--panel-body-->
+  </div> <!--panel-->
 
 
 </div> <!-- Controller -->
