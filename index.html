@@ -252,67 +252,38 @@
     <div class="layer" ng-model="selectedColor" ng-style="{'background-color': '{{selectedColor}}'}"></div>
     -->
 
-  <div class="container colorSelectorBox">
-    <div class="row">
-      <span>
+  <div class="container color-selector-box">
+    <div class="row" ng-repeat="row in colors">
+      <span class="color-radio-option" ng-repeat="color in row">
         <input type="radio"
+               ng-model="selectedColor"
                name="colorSelector"
-               id="white"
-               value="{{colors.white}}"
-               class="radio-inline white"
-               ng-model="selectedColor"/>
-        <label for="white"
-               ng-style="{'background':'{{colors.white}}'}">
-          &nbsp
-        </label>
-      </span>
+               id="{{color.name}}"
+               value="{{color.code}}"
+               class="radio-inline"
+               ng-click="log(color)"
+        />
+        <label for="{{color.name}}"
+               ng-style="{'background':'{{color.code}}'}">&nbsp</label>
+      </span> <!-- Column -->
+    </div> <!-- Row -->
+  </div> <!-- Container -->
 
-      <span>
-        <input type="radio"
-               name="colorSelector"
-               id="grey"
-               value="{{colors.grey}}"
-               class="radio-inline text-center"
-               ng-model="selectedColor"/>
-        <label for="grey"
-               ng-style="{'background':'{{colors.grey}}'}">
-          &nbsp
-        </label>
-      </span>
-
-
-      <input type="radio"
-             name="colorSelector"
-             id="black"
-             value="{{colors.black}}"
-             class="radio-inline"
-             ng-model="selectedColor"/>
-      <label for="black"
-             ng-style="{'background':'{{colors.black}}'}">
-        &nbsp
-      </label>
-
-    </div>
-
-  </div>
-  <div ng-repeat="row in loom">
-    <div class="bead">
-      <button ng-repeat="bead in row"
-              style="background-color: {{bead.color}}">
-        <span ng-model="bead"
-              ng-class="bead.color"
-              style="background-color: {{bead.color}}"
-              ng-click="changeColor(bead)">
-
-        </span>
-      </button>
-
+  <div class="panel panel-loom">
+    <div class="panel-body">
+      <div class="bead-row" ng-repeat="row in loom">
+        <div class="bead">
+          <button ng-repeat="bead in row"
+                  ng-click="changeColor(bead)"
+                  style="background-color: {{bead.color}}">
+          <span></span>
+          </button>
+        </div> <!-- bead -->
+      </div> <!-- ng-repeat loom -->
     </div>
   </div>
 
-  <div ng-repeat="row in loom">
-    <!--<p ng-repeat="bead in row"> {{bead}}</p>-->
-  </div>
-</div>
+
+</div> <!-- Controller -->
 </body>
 </html>
