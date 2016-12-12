@@ -184,9 +184,9 @@ var colors = [
     $scope.colors = colors;
     $scope.selectedColor = "#FFF";
 
-    for (var i = 0; i < $scope.numThreads; i++) {
+    for (var i = 0; i < $scope.numBeadRows; i++) {
       var row = [];
-      for (var j = 0; j < $scope.numBeadRows; j++) {
+      for (var j = 0; j < $scope.numThreads; j++) {
         row.push({row: j, threadNumber: i, color: $scope.selectedColor});
       }
       $scope.loom.push(row);
