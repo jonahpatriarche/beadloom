@@ -207,6 +207,7 @@ var colors = [
      *  - fetch each horizontal column of beads 
      */
     $scope.addRow = function () {
+      $scope.selectedColor = '#FFF';
       for (var i = 0; i < $scope.numThreads; i++) {
         var row = $scope.loom[i];
         row.push({row: $scope.numBeadRows, threadNumber: i, color: $scope.selectedColor});
