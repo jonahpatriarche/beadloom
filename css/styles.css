@@ -1,0 +1,225 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    background: #caac80;
+    cursor: default;
+}
+
+.container {
+    background-color: #e8d5b1;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding:10px;
+}
+.bead button {
+    display: inline-table;
+    position: relative;
+    width: 15px;
+    height: 30px;
+    margin: 0px;
+    border: inset transparent 1px;
+    border-radius: 20px;
+}
+
+.bead span {
+    display: block;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #eeeeee;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    transition: ease .3s;
+}
+
+.bead span:hover {
+    padding: 2px;
+}
+
+.colorSelectorBox {
+    border:solid 1px black;
+}
+.row {
+    margin: 0 .75em 0 0;
+}
+
+label {
+    width: 2.5em;
+    border-radius: 100%;
+}
+
+/* hide input */
+input.radio-inline {
+    margin-top: -999px;
+}
+
+/* style label */
+input.radio-inline:empty ~ label {
+    position: relative;
+    margin: 5px;
+    float: left;
+    line-height: 2.5em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input.radio-inline:empty ~ label:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 2.5em;
+    border-radius:100%;
+    border: 1px solid black;
+}
+
+/* toggle hover */
+input.radio-inline:hover:not(:checked) ~ label:before {
+    content:'\2714';
+    text-indent: .1em;
+    color: #C2C2C2;
+}
+
+input.radio-inline:hover:not(:checked) ~ label {
+    color: #888;
+}
+
+/* toggle on */
+input.radio-inline:checked ~ label:before {
+    content:'\2714';
+    text-indent: .1em;
+    border: solid 1px #ffffff;
+}
+
+input.radio-inline:checked ~ label {
+    color: #FFF;
+}
+
+/* radio focus */
+input.radio-inline:focus ~ label:before {
+    box-shadow: 0 0 0 3px #999;
+}
+
+/*
+input {
+display: none;
+}
+
+
+
+.colorSelector {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.colorSelector span {
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background: #eeeeee;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    transition: ease .3s;
+}
+
+
+.colorSelector span:hover {
+    padding: 10px;
+
+}
+
+input:checked {
+    border: 5px solid black;
+    size: 500px;
+}
+
+.orange .colorSelector span {
+    background: #FF5722;
+}
+
+.amber span {
+    background: #FFC107;
+}
+
+.lime .colorSelector span {
+    background: #8BC34A;
+}
+
+.teal .colorSelector span {
+    background: #009688;
+}
+
+.blue .colorSelector span {
+    background: #2196F3;
+}
+
+.indigo .colorSelector span {
+    background: #3F51B5;
+}
+
+.layer {
+    display: block;
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    transition: ease .3s;
+    z-index: -1;
+}
+
+.orange input:checked ~ .layer {
+    background: #F4511E;
+}
+
+.amber input:checked ~ .layer {
+    background: #FFB300;
+}
+
+.lime input:checked ~ .layer {
+    background: #7CB342;
+}
+
+.teal input:checked ~ .layer {
+    background: #00897B;
+}
+
+.blue input:checked ~ .layer {
+    background: #1E88E5;
+}
+
+.indigo input:checked ~ .layer {
+    background: #3949AB;
+}
+*/
+

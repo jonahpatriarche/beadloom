@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BeadingApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Beading App</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div ng-controller="BeadingController">
+  <!----------------------
+    -- COLOR SELECTORS  --
+    ---------------------->
+  <!-- FANCY, BUT BUGGY SELECTORS
+   <label id="lightRed">
+     <input type="radio"
+            name="color"
+            value="{{colors.lightRed}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style="{'background-color':'{{colors.lightRed}}'}"></span>
+     </div>
+   </label>
+
+   <label id="red">
+     <input type="radio"
+            name="color"
+            value="{{colors.red}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style="{'background-color':'{{colors.red}}'}"></span>
+     </div>
+   </label>
+
+   <label id="darkRed">
+     <input type="radio"
+            name="color"
+            value="{{colors.darkRed}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style="{'background-color':'{{colors.darkRed}}'}"></span>
+     </div>
+   </label>
+
+   &lt;!&ndash; Oranges &ndash;&gt;
+   <label id="lightOrange">
+     <input type="radio"
+            name="color"
+            value="{{colors.lightOrange}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer"></div>
+     <div class="colorSelector">
+       <span ng-style="{'background-color':'{{colors.lightOrange}}'}"></span>
+     </div>
+   </label>
+
+   <label id="orange">
+     <input type="radio"
+            name="color"
+            value="{{colors.orange}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style="{'background-color':'{{colors.orange}}'}"></span>
+     </div>
+   </label>
+
+   <label id="darkOrange">
+     <input type="radio"
+            name="color"
+            value="{{colors.darkOrange}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style="{'background-color':'{{colors.darkOrange}}'}"></span>
+     </div>
+   </label>
+
+   &lt;!&ndash; Yellows &ndash;&gt;
+   <label id="lightYellow">
+     <input type="radio"
+            name="color"
+            value="{{colors.lightYellow}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.lightYellow}}'}"></span>
+     </div>
+   </label>
+
+   <label id="yellow">
+     <input type="radio"
+            name="color"
+            value="{{colors.yellow}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.yellow}}'}"></span>
+     </div>
+   </label>
+
+   <label id="darkYellow">
+     <input type="radio"
+            name="color"
+            value="{{colors.darkYellow}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style="{'background-color':'{{colors.darkYellow}}'}"></span>
+     </div>
+   </label>
+
+   &lt;!&ndash; Greens &ndash;&gt;
+   <label id="lightGreen">
+     <input type="radio"
+            name="color"
+            value="{{colors.lightGreen}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.lightGreen}}'}"></span>
+     </div>
+   </label>
+
+   <label id="green">
+     <input type="radio"
+            name="color"
+            value="{{colors.green}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.green}}'}"></span>
+     </div>
+   </label>
+
+   <label id="darkGreen">
+     <input type="radio"
+            name="color"
+            value="{{colors.darkGreen}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.darkGreen}}'}"></span>
+     </div>
+   </label>
+
+   &lt;!&ndash; Blues &ndash;&gt;
+   <label id="lightBlue">
+     <input type="radio"
+            name="color"
+            value="{{colors.lightBlue}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.lightBlue}}'}"></span>
+     </div>
+   </label>
+
+   <label id="blue">
+     <input type="radio"
+            name="color"
+            value="{{colors.blue}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.blue}}'}"></span>
+     </div>
+   </label>
+
+   <label id="darkBlue">
+     <input type="radio"
+            name="color"
+            value="{{colors.darkBlue}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.darkBlue}}'}"></span>
+     </div>
+   </label>
+
+   &lt;!&ndash; Shades &ndash;&gt;
+   <label id="white">
+     <input type="radio"
+            name="color"
+            value="{{colors.white}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.white}}'}"></span>
+     </div>
+   </label>
+
+   <label id="grey">
+     <input type="radio"
+            name="color"
+            value="{{colors.grey}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.grey}}'}"></span>
+     </div>
+   </label>
+
+   <label id="black">
+     <input type="radio"
+            name="color"
+            value="{{colors.black}}"
+            ng-model="selectedColor"
+     >
+     <div class="layer" ng-bind="selectedColor"></div>
+     <div class="colorSelector">
+       <span ng-style={'background-color':'{{colors.black}}'}"></span>
+     </div>
+   </label>-->
+
+  <!--<div ng-repeat="color in colors">
+
+      <
+      label>
+        <input type ng-style={'background-color':'{{colors.red}'}
+        ="radio"
+               name="color"
+               value="{{color.code}}"
+               ng-model="selectedColor">
+        <div class="colorSelector">
+          <span style="background:{{color.code}}"></span>
+        </div>
+      </label>
+    </div>
+    <div class="layer" ng-model="selectedColor" ng-style="{'background-color': '{{selectedColor}}'}"></div>
+    -->
+
+  <div class="container colorSelectorBox">
+    <div class="row">
+      <span>
+        <input type="radio"
+               name="colorSelector"
+               id="white"
+               class="radio-inline"/>
+        <label for="white"
+               ng-style="{'background':'{{colors.white}}'}">
+          &nbsp
+        </label>
+      </span>
+
+      <span>
+        <input type="radio"
+               name="colorSelector"
+               id="grey"
+               class="radio-inline"
+        />
+        <label for="grey"
+               ng-style="{'background':'{{colors.grey}}'}">
+          &nbsp
+        </label>
+      </span>
+
+
+      <input type="radio"
+             name="colorSelector"
+             id="black"
+             class="radio-inline"/>
+      <label for="black"
+             ng-style="{'background':'{{colors.black}}'}">
+        &nbsp
+      </label>
+
+    </div>
+
+  </div>
+  <div ng-repeat="row in loom">
+    <div class="bead">
+      <button ng-repeat="bead in row"
+              style="background-color: {{bead.color}}">
+        <span ng-model="bead"
+              ng-class="bead.color"
+              style="background-color: {{bead.color}}"
+              ng-click="changeColor(bead)">
+
+        </span>
+      </button>
+
+    </div>
+  </div>
+
+  <div ng-repeat="row in loom">
+    <!--<p ng-repeat="bead in row"> {{bead}}</p>-->
+  </div>
+</div>
+</body>
+</html>
