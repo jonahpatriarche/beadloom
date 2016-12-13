@@ -12,17 +12,20 @@ body {
 
 
 .color-selector-box {
-    background-color: #e8d5b1;
+    background-color: #6f502e;
     margin-bottom: 50px;
     margin-top: 50px;
     padding:10px;
     border:solid 1px black;
 }
 
-label {
-    width: 2.5em;
-    border-radius: 100%;
-    border: hidden;
+.color-indicator {
+    max-width: 50%;
+    height: 5vw;
+    margin: 10% 25%;
+    border-radius: 45%;
+    box-shadow: 0 0 4px #000;
+    background: radial-gradient(transparent 65%, rgba(255, 255, 255, 0.26), black);
 }
 
 /* hide input */
@@ -30,83 +33,44 @@ input.radio-inline {
     display: none;
 }
 
-/* style label */
-input.radio-inline:empty ~ label {
-    position: relative;
-    margin: 5px;
-    float: left;
-    line-height: 2.5em;
-    cursor: pointer;
+.materialpicker-colors {
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    width: 20px;
+    height: 20px;
     user-select: none;
+    position: relative;
+    border: none;
+    /*border-radius: 2px;*/
+    display: inline-block;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    cursor: default;
 }
-
-input.radio-inline:empty ~ label:before {
-    position: absolute;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 2.5em;
-    border-radius:100%;
-    border: hidden;
+.materialpicker-colors div.selected {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 4px #000;
+    border: 2px solid #FFF;
 }
-
-/* toggle hover */
-input.radio-inline:hover:not(:checked) ~ label:before {
-    content:'\2714';
-    text-indent: .1em;
-    color: #C2C2C2;
-    box-shadow: 0 0 0 3px #C2C2C2;
-
+div.materialpicker-white.selected {
+    border-color: #78909C;
 }
-
-input.radio-inline:hover:not(:checked) ~ label {
-    color: #888;
-}
-
-/* toggle on */
-input.radio-inline:checked ~ label:before {
-    content:'\2714';
-    text-indent: 0.1em;
-    border: hidden;
-    /*box-shadow: 0 0 0 3px #FFF;*/
-}
-
-input.radio-inline:checked ~ label {
-    color: #FFF;
-}
-
-input.white.radio-inline:checked ~ label:before {
-    content:'\2714';
-    text-indent: 0.1em;
-    border: hidden;
-    /*box-shadow: 0 0 0 3px #555;*/
-}
-
-input.white.radio-inline:checked ~ label {
-    color: #555;
-    border:hidden;
-    /*box-shadow: 0 0 0 3px #555;*/
+.materialpicker.ng-invalid .materialpicker-colors {
+    border-color: #a94442;
+    box-shadow: 0 1px 5px #a94442;
 }
 
 /*******************************************
  *                  LOOM                   *
  *******************************************/
 
-.panel-loom {
+.loom {
     position: relative;
-    max-width: 50vw;
-    margin: 200px auto;
+    margin-top: 50px;
 }
 
-.panel-loom .btn {
-    position: absolute;
+.loom .btn {
+    float:right;
     max-width: 5vw;
-    text-align: center;
     bottom: -60px;
     margin: auto;
 }

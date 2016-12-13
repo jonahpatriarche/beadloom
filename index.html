@@ -252,28 +252,24 @@
     <div class="layer" ng-model="selectedColor" ng-style="{'background-color': '{{selectedColor}}'}"></div>
     -->
 
-  <div class="container color-selector-box">
-    <div class="row" ng-repeat="row in colors">
-      <span class="color-radio-option" ng-repeat="color in row">
-        <input type="radio"
-               ng-model="selectedColor"
-               name="colorSelector"
+  <div class="container">
+    <div class="color-selector-box col-lg-4">
+      <div class="row">
+        <div class="color-indicator col-lg-6 col-lg-offset-3" style="background-color: {{selectedColor}}">&nbsp
+        </div>
+      </div>
+      <div class="row" ng-repeat="row in swatches">
+      <div class="materialpicker-colors" ng-repeat="color in row"
+               name="colorOption"
                id="{{color.name}}"
                value="{{color.code}}"
-               class="radio-inline"
-               ng-click="log(color)"
-        />
-        <label for="{{color.name}}"
-               ng-style="{'background':'{{color.code}}'}">&nbsp</label>
-      </span> <!-- Column -->
-    </div> <!-- Row -->
-  </div> <!-- Container -->
+               ng-click="log(color, this)"
+               ng-style="{'background':'{{color.code}}'}"
+        ></div>
+        </div>
+    </div> <!-- selector -->
 
-  <div class="panel panel-default panel-loom">
-
-
-    <div class="panel-body">
-      <button class="btn btn-sm btn-default" ng-click="addRow()">Add Row</button>
+  <div class="loom col-lg-4 col-lg-offset-2">
       <div class="bead-row" ng-repeat="row in loom">
         <div class="bead">
           <button ng-repeat="bead in row"
@@ -281,12 +277,12 @@
                   style="background-color: {{bead.color}}">
           <span></span>
           </button>
-        </div> <!-- bead -->
-      </div> <!-- ng-repeat loom -->
-    </div> <!--panel-body-->
-  </div> <!--panel-->
+        </div> <!--bead -->
+      </div> <!--ng-repeat-->
+    <button class="btn btn-sm btn-default" ng-click="addRow()">Add Row</button>
+  </div> <!--loom-->
 
-
+  </div> <!-- Container -->
 </div> <!-- Controller -->
 </body>
 </html>
