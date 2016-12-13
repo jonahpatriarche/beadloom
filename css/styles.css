@@ -13,16 +13,18 @@ body {
 
 .color-selector-box {
     background-color: #6f502e;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    padding:10px;
+    position: fixed;
+    top: 50px;
+    height: 650px;
+    width: 350px;
+    padding: 0 1vw 1vh 1vw;
     border:solid 1px black;
 }
 
 .color-indicator {
     max-width: 50%;
     height: 5vw;
-    margin: 10% 25%;
+    margin: 5vh 25%;
     border-radius: 45%;
     box-shadow: 0 0 4px #000;
     background: radial-gradient(transparent 65%, rgba(255, 255, 255, 0.26), black);
