@@ -394,7 +394,11 @@ var swatches = [
   ],
   [
     { name: 'white', code: '#FFFFFF'},
-    { name: 'black', code: '#000000'}
+    { name: 'black', code: '#000000'},
+    { name: 'custom1', code: '#80260C'},
+    { name: 'custom2', code: '#5c0b03'},
+    { name: 'custom3', code: '#011182'},
+    { name: 'custom4', code: '#010947'}
   ]
 ];
 (function () {
