@@ -12,51 +12,54 @@ body {
 
 
 .color-selector-box {
-    background-color: #6f502e;
     position: fixed;
-    top: 50px;
-    height: 650px;
-    width: 350px;
-    padding: 0 1vw 1vh 1vw;
-    border:solid 1px black;
+    left: 2vw;
+    background-color: #4B413F;
+    height: 90vh;
+    line-height: 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    overflow: scroll;
+    padding: 2em 2.4em 1em 2em;
+    border: solid 1px black;
+}
+.btn-toolbar {
+    margin-top: 5vh;
 }
 
-.color-indicator {
-    max-width: 50%;
-    height: 5vw;
-    margin: 5vh 25%;
-    border-radius: 45%;
-    box-shadow: 0 0 4px #000;
-    background: radial-gradient(transparent 65%, rgba(255, 255, 255, 0.26), black);
+.btn-group-vertical {
+    padding: 1em;
 }
 
-/* hide input */
-input.radio-inline {
-    display: none;
-}
-
-.materialpicker-colors {
+.color-selector {
     -webkit-user-select: none;
-    width: 20px;
-    height: 20px;
-    user-select: none;
-    position: relative;
-    border: none;
-    /*border-radius: 2px;*/
     display: inline-block;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    width: 2em;
+    height: 2em;
+    margin: 0 -0.4em 0 0;
+    user-select: none;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     cursor: default;
 }
-.materialpicker-colors div.selected {
+
+.color-selector.selected {
     position: relative;
     z-index: 2;
     box-shadow: 0 0 4px #000;
-    border: 2px solid #FFF;
+    border: 2px solid #747e93;
+    margin-top: -2px;
 }
-div.materialpicker-white.selected {
-    border-color: #78909C;
+
+.color-selector.selected.white {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 4px #000;
+    border: 2px solid #78909C;
+    margin-top: -2px;
 }
-.materialpicker.ng-invalid .materialpicker-colors {
+
+.color-selector.v-invalid .color-selector {
     border-color: #a94442;
     box-shadow: 0 1px 5px #a94442;
 }
@@ -68,13 +71,8 @@ div.materialpicker-white.selected {
 .loom {
     position: relative;
     margin-top: 50px;
-}
-
-.loom .btn {
-    float:right;
-    max-width: 5vw;
-    bottom: -60px;
-    margin: auto;
+    margin-bottom: 50px;
+    border: 1px solid red;
 }
 
 .bead-row {
