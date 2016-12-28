@@ -1,4 +1,4 @@
-html,
+
 body {
     width: 100%;
     height: 100%;
@@ -27,8 +27,14 @@ body {
     margin-top: 5vh;
 }
 
-.btn-group-vertical {
+.btn-group, .btn-group-vertical {
     padding: 1em;
+}
+
+#print-loom {
+    position: absolute;
+    right: 2em;
+    top: 2em;
 }
 
 .color-selector {
@@ -74,6 +80,11 @@ body {
     margin-bottom: 50px;
 }
 
+.print-view {
+    float: left;
+    padding: 25px;
+    background-color: white;
+}
 .bead-row {
     line-height:0;
 }

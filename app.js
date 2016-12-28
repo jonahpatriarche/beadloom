@@ -312,8 +312,8 @@ var swatches = [
 
     BeadingController.$inject = ['$scope'];
     function BeadingController($scope) {
-        $scope.rowLength = 20; // horizontal rows
-        $scope.numBeadRows = 25; // vertical rows of beads
+        $scope.rowLength = 5; // horizontal rows
+        $scope.numBeadRows = 10; // vertical rows of beads
         $scope.loom = loom;
         /*$scope.colors = colors;*/
         $scope.swatches = swatches;
@@ -334,7 +334,7 @@ var swatches = [
             }
         }; //changeColor
 
-        $scope.setColor = function (color, element) {
+        $scope.setColor = function (color) {
             $scope.selectedColor = color.code;
         };
 
@@ -387,5 +387,50 @@ var swatches = [
                 $scope.rowLength--;
             }
         }; // removeColumn
+
+        $scope.printLoom = function () {
+            var printHTML = '';
+            var bead = document.getElementsByClassName('bead')[0];
+            var viewHeight = 50 * $scope.numBeadRows + 200;
+            var viewWidth = 20 * $scope.rowLength + 50;
+
+            for (var i = 0; i < $scope.numBeadRows; i++) {
+                var row = $scope.loom[i];
+                console.log(row);
+                printHTML = printHTML.concat(
+                    '<body class="print-view" style="height:' + viewHeight +'; width=' + viewWidth + '">' +
+                    '<div class="bead-row">'
+                );
+                for (var j = 0; j < $scope.rowLength; j++) {
+                    printHTML = printHTML.concat(
+                        '<span class="bead">' +
+                            '<button style="background-color: ' + row[j].color +'"></button>' +
+                        '</span>'
+                    );
+                }
+                printHTML = printHTML.concat('</div></div>');
+            }
+
+
+
+            var popupWin = window.open(
+                'Print View',
+                'Print View',
+                'width=' + viewWidth + ',height=' + viewHeight
+            );
+            popupWin.document.open();
+            popupWin.document.write('' +
+                '<html>' +
+                    '<head>' +
+                        '<link rel="stylesheet" type="text/css" href="css/styles.css" />' +
+                    '</head>' +
+                    '<body onpageshow="window.print()">' +
+                            printHTML +
+                    '</body>' +
+                '</html>'
+            );
+            popupWin.document.close();
+        }; //printLoom
+
     } // Controller
 })();
