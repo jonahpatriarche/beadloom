@@ -312,12 +312,12 @@ var swatches = [
 
     BeadingController.$inject = ['$scope'];
     function BeadingController($scope) {
-        $scope.rowLength = 5; // horizontal rows
-        $scope.numBeadRows = 10; // vertical rows of beads
+        $scope.rowLength = 30;
+        $scope.numBeadRows = 50;
         $scope.loom = loom;
-        /*$scope.colors = colors;*/
         $scope.swatches = swatches;
         $scope.selectedColor = "#FFF";
+        
         for (var i = 0; i < $scope.numBeadRows; i++) {
             var row = [];
             for (var j = 0; j < $scope.rowLength; j++) {

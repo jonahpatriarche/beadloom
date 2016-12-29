@@ -14,49 +14,62 @@
     -- COLOR SELECTORS  --
     ---------------------->
   <div class="container">
-    <div class="color-selector-box">
-      <div class="row" ng-repeat="row in swatches">
-        <div class="color-selector" ng-repeat="color in row"
-             name="colorOption"
-             id="{{color.name}}"
-             value="{{color.code}}"
-             ng-click="setColor(color)"
-             ng-style="{'background':'{{color.code}}'}"
-             ng-class="{'selected': selectedColor === color.code}"
-        ></div>
-      </div>
-      <div class="row">
-        <div class="btn-toolbar" role="toolbar" aria-label="">
-          <div class="btn-group-vertical" role="group" aria-label="">
-            <button class="btn btn-sm btn-danger" ng-click="removeRow()">Remove Row</button>
-            <button class="btn btn-sm btn-success" ng-click="addRow()">Add Row</button>
+    <div class="row">
+      <div class="color-selector-box">
+        <div class="row" ng-repeat="row in swatches">
+          <div class="color-selector" ng-repeat="color in row"
+               name="colorOption"
+               id="{{color.name}}"
+               value="{{color.code}}"
+               ng-click="setColor(color)"
+               ng-style="{'background':'{{color.code}}'}"
+               ng-class="{'selected': selectedColor === color.code}"
+          >
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="btn-toolbar" role="toolbar" aria-label="">
+        <div class="row">
           <div class="btn-group" role="group" aria-label="">
             <button id="btn-remove-col" class="btn btn-sm btn-danger" ng-click="removeColumn()">Remove Column</button>
             <button id="btn-add-col" class="btn btn-sm btn-success" ng-click="addColumn()">Add Column</button>
           </div>
         </div>
+        <div class="row">
+          <div class="btn-group-vertical" role="group" aria-label="">
+            <button class="btn btn-sm btn-danger" ng-click="removeRow()">Remove Row</button>
+            <button class="btn btn-sm btn-success" ng-click="addRow()">Add Row</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn-group" role="group" aria-label="">
+            <button id="print-loom" class="btn btn-md btn-primary" ng-click="printLoom()">Print</button>
+          </div>
+        </div>
       </div>
-    </div> <!-- selector -->
+    </div>
+  </div> <!-- container -->
 
-    <button id="print-loom" class="btn btn-sm btn-primary pull-right" ng-click="printLoom()">Print</button>
-    <div id="loom"
-         class="container loom
+
+  <div id="loom"
+       class="container loom
               col-lg-9 col-lg-offset-4
               col-md-10 col-md-offset-4
               col-sm-10 col-sm-offset-6">
-      <div class="bead-row" ng-repeat="row in loom">
-        <div class="bead">
-          <button ng-repeat="bead in row"
-                  ng-click="setBeadColor(bead)"
-                  style="background-color: {{bead.color}}">
-            <span></span>
-          </button>
-        </div> <!--bead -->
-      </div> <!--ng-repeat-->
-    </div> <!--loom-->
+    <div class="bead-row" ng-repeat="row in loom">
+      <div class="bead">
+        <button ng-repeat="bead in row"
+                ng-click="setBeadColor(bead)"
+                style="background-color: {{bead.color}}">
+          <span></span>
+        </button>
+      </div> <!--bead -->
+    </div> <!--ng-repeat-->
+  </div> <!--loom-->
 
-  </div> <!-- Container -->
+</div> <!-- Container -->
 </div> <!-- Controller -->
 </body>
 </html>
