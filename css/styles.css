@@ -1,20 +1,32 @@
-html,
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    text-align: center;
     box-sizing: border-box;
+    text-align: center;
     background: #caac80;
     cursor: default;
 }
+.control-bar {
+    padding: 5px 25px;
+    background-color: #3d251f;
+}
 
+.btn-group {
+    padding: 2px;
+}
 
 .color-selector-box {
     background-color: #6f502e;
     position: fixed;
-    top: 50px;
+    top: 75px;
+    left: 50px;
     height: 650px;
     width: 350px;
     padding: 0 1vw 1vh 1vw;
@@ -67,14 +79,13 @@ div.materialpicker-white.selected {
 
 .loom {
     position: relative;
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
-.loom .btn {
-    float:right;
-    max-width: 5vw;
-    bottom: -60px;
-    margin: auto;
+.print-view {
+    float: left;
+    padding: 25px;
+    background-color: white;
 }
 
 .bead-row {
