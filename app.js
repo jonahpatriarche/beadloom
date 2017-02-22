@@ -2,6 +2,10 @@
  * Created by jonah on 2016-12-06.
  */
 var loom = [];
+/**
+ * TEMPORARY
+ * @todo replace with backend data
+ */
 var swatches = [
     [
         {name: 'red-50', code: '#FFEBEE'},
