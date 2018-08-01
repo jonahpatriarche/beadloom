@@ -340,9 +340,26 @@ var swatches = [
         };
 
         /*
+         * Add another row of white beads onto top of loom
+         */
+        $scope.addRowTop = function () {
+            var newRow = [];
+            for (var i = 0; i < $scope.rowLength; i++) {
+                newRow.push({
+                    row: $scope.numBeadRows,
+                    rowIndex: i,
+                    color: $scope.defaultColor
+                });
+            }
+
+            $scope.loom.unshift(newRow);
+            $scope.numBeadRows++;
+        }; // addRow
+
+        /*
          * Add another row of white beads onto bottom of loom
          */
-        $scope.addRow = function () {
+        $scope.addRowBottom = function () {
             var newRow = [];
             for (var i = 0; i < $scope.rowLength; i++) {
                 newRow.push({
@@ -376,9 +393,37 @@ var swatches = [
         }; // addColumn
 
         /*
+         * Add a white bead to the beginning of each row, and increment row length
+         *  - max length is 50
+         */
+        $scope.addColumnLeft = function () {
+            if ($scope.rowLength < 50) {
+                for (var i = 0; i < $scope.numBeadRows; i++) {
+                    var row = $scope.loom[i];
+                    row.unshift({
+                        row: i,
+                        rowIndex: 0,
+                        color: $scope.defaultColor
+                    });
+                }
+
+                $scope.rowLength++;
+            }
+        }; // addColumn
+
+        /*
          * Remove the last row of beads
          */
-        $scope.removeRow = function () {
+        $scope.removeRowTop = function () {
+            if ($scope.loom.shift()) {
+                $scope.numBeadRows--;
+            }
+        }; // removeRow
+
+        /*
+         * Remove the last row of beads
+         */
+        $scope.removeRowBottom = function () {
             if ($scope.loom.pop()) {
                 $scope.numBeadRows--;
             }
@@ -392,6 +437,19 @@ var swatches = [
                 for (var i = 0; i < $scope.numBeadRows; i++) {
                     var row = $scope.loom[i];
                     row.pop();
+                }
+                $scope.rowLength--;
+            }
+        }; // removeColumn
+
+        /*
+         * Remove bead from the beginning of each row
+         */
+        $scope.removeColumnLeft = function () {
+            if ($scope.rowLength > 0) {
+                for (var i = 0; i < $scope.numBeadRows; i++) {
+                    var row = $scope.loom[i];
+                    row.shift();
                 }
                 $scope.rowLength--;
             }
@@ -412,7 +470,7 @@ var swatches = [
                 for (var j = 0; j < $scope.rowLength; j++) {
                     printHTML = printHTML.concat(
                         '<span class="bead">' +
-                            '<button style="background-color: ' + row[j].color +'"></button>' +
+                            '<button style="background-color: ' + row[j].color.code +'"></button>' +
                         '</span>'
                     );
                 }

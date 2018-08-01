@@ -2,15 +2,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background: #caac80;
 }
 body {
     width: 100%;
-    height: 100%;
+    height: 1000%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-align: center;
-    background: #caac80;
     cursor: default;
 }
 
@@ -88,6 +88,7 @@ div.materialpicker-white.selected {
 .loom {
     position: relative;
     margin-top: 75px;
+    margin-bottom: 75px;
 }
 
 .print-view {
