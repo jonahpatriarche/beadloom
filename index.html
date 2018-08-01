@@ -3,12 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Beading App</title>
-  <script src="angular.min.js"></script>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
   <script src="app.js"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
 </head>
 <body>
+
 <div ng-controller="BeadingController">
   <!----------------------
     -- COLOR SELECTORS  --
@@ -29,6 +38,7 @@
     </div>
     <div class="color-selector-box">
       <div class="row">
+        <p class="color-label">{{selectedColor.name}}</p>
         <div class="color-indicator
                     col-lg-6 col-lg-offset-3
                      col-md-6 col-md-offset-3"
@@ -43,7 +53,11 @@
              value="{{color.code}}"
              ng-click="setColor(color)"
              ng-style="{'background':'{{color.code}}'}"
-        ></div>
+        >
+          <md-tooltip md-direction="top">
+            {{color.name}}
+          </md-tooltip>
+        </div>
       </div>
     </div> <!-- selector -->
 
@@ -55,7 +69,11 @@
         <div class="bead">
           <button ng-repeat="bead in row"
                   ng-click="setBeadColor(bead)"
+                  aria-label="{{bead.color.name}}"
                   style="background-color: {{bead.color.code}}">
+            <md-tooltip md-direction="top">
+              {{bead.color.name}}
+            </md-tooltip>
             <span></span>
           </button>
         </div> <!--bead -->

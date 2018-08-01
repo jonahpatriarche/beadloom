@@ -307,7 +307,7 @@ var swatches = [
 (function () {
     'use strict';
 
-    angular.module('BeadingApp', [])
+    angular.module('BeadingApp', ['ngMaterial', 'ngMessages'])
     .controller('BeadingController', BeadingController);
 
     BeadingController.$inject = ['$scope'];
@@ -345,7 +345,11 @@ var swatches = [
         $scope.addRow = function () {
             var newRow = [];
             for (var i = 0; i < $scope.rowLength; i++) {
-                newRow.push({row: $scope.numBeadRows, rowIndex: i, color: '#FFF'});
+                newRow.push({
+                    row: $scope.numBeadRows,
+                    rowIndex: i,
+                    color: $scope.defaultColor
+                });
             }
 
             $scope.loom.push(newRow);
@@ -360,7 +364,11 @@ var swatches = [
             if ($scope.rowLength < 50) {
                 for (var i = 0; i < $scope.numBeadRows; i++) {
                     var row = $scope.loom[i];
-                    row.push({row: i, rowIndex: $scope.rowLength + 1, color: '#FFF'});
+                    row.push({
+                        row: i,
+                        rowIndex: $scope.rowLength + 1,
+                        color: $scope.defaultColor
+                    });
                 }
 
                 $scope.rowLength++;
@@ -397,7 +405,6 @@ var swatches = [
 
             for (var i = 0; i < $scope.numBeadRows; i++) {
                 var row = $scope.loom[i];
-                console.log(row);
                 printHTML = printHTML.concat(
                     '<body class="print-view" style="height:' + viewHeight +'; width=' + viewWidth + '">' +
                     '<div class="bead-row">'
@@ -411,8 +418,6 @@ var swatches = [
                 }
                 printHTML = printHTML.concat('</div></div>');
             }
-
-
 
             var popupWin = window.open(
                 'Print View',
